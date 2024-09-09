@@ -1,36 +1,44 @@
-# Estagio-Sao-Paulo
+# Estágio São Paulo
 
-Técnica:
+Este projeto contém várias atividades desenvolvidas como parte do estágio. As atividades estão organizadas na pasta `tecnica`, que contém o código-fonte em Java.
 
-1) Observe o trecho de código abaixo: int INDICE = 13, SOMA = 0, K = 0;
-Enquanto K < INDICE faça { K = K + 1; SOMA = SOMA + K; }
-Imprimir(SOMA);
-Ao final do processamento, qual será o valor da variável SOMA?
+## Estrutura do Projeto
 
-2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+1. **Atividade 1**: Cálculo da soma dos números de 1 até um índice definido.
+2. **Atividade 2**: Verificação de um número na sequência de Fibonacci.
+3. **Atividade 3**: Cálculo de estatísticas de faturamento diário.
+    - **Observação**: Para executar a atividade 3, é necessário ter o Maven instalado. Certifique-se de construir o projeto usando o Maven para gerar a classe `Main`.
+4. **Atividade 4**: Cálculo do percentual de representação de faturamento por estado.
+5. **Atividade 5**: Inversão dos caracteres de uma string.
 
-IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
+## Instruções de Execução
 
-3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
-• O menor valor de faturamento ocorrido em um dia do mês;
-• O maior valor de faturamento ocorrido em um dia do mês;
-• Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+1. **Acessando o Projeto**
 
-IMPORTANTE:
-a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
-b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;
+   Navegue até a pasta `tecnica`, onde você encontrará o diretório `src` com o código-fonte das atividades. A estrutura do diretório é a seguinte:
 
-4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
-• SP – R$67.836,43
-• RJ – R$36.678,66
-• MG – R$29.229,88
-• ES – R$27.165,48
-• Outros – R$19.849,53
 
-Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.  
+2. **Executando a Atividade 3**
 
-5) Escreva um programa que inverta os caracteres de um string.
+Para executar a atividade 3, siga os passos abaixo:
 
-IMPORTANTE:
-a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
-b) Evite usar funções prontas, como, por exemplo, reverse;
+- Certifique-se de que o Maven está instalado em sua máquina.
+- Navegue até o diretório `tecnica` no terminal.
+- Construa o projeto usando o Maven com o comando:
+
+  ```bash
+  mvn clean install
+  ```
+
+- Após a construção bem-sucedida, você pode executar a classe `Main` para testar a atividade 3.
+
+3. **Testando as Outras Atividades**
+
+As demais atividades podem ser testadas individualmente. Navegue até a pasta `Estagio-Sao-Paulo\tecnica\src\atividades` e execute o código conforme necessário para testar cada uma das atividades.
+
+## Observações
+
+- Certifique-se de que todas as dependências necessárias estão instaladas e que o projeto está corretamente configurado.
+- Se houver algum problema com a execução ou com o caminho dos arquivos, verifique a configuração do seu ambiente de desenvolvimento e os caminhos dos arquivos.
+
+Se precisar de mais informações ou tiver alguma dúvida, entre em contato com o responsável pelo projeto.

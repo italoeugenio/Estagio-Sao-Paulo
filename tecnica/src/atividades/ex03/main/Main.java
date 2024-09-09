@@ -5,7 +5,7 @@ import atividades.ex03.controller.Faturamento;
 
 public class Main {
     public static void main(String[] args) {
-        final String arquivoJson = "./Estagio-Sao-Paulo";
+        String arquivoJson = "src/atividades/ex03/dados/dados.json";
 
         Faturamento faturamento = new Faturamento();
         faturamento.processarFaturamento(arquivoJson);
