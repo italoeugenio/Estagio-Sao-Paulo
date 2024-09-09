@@ -1,7 +1,6 @@
 package atividades.ex03.controller;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import atividades.ex03.model.FaturamentoDiario;
 
@@ -26,25 +25,28 @@ public class Faturamento {
         int diasComFaturamento = 0;
         int diasAcimaDaMedia = 0;
 
+        // Calcula o menor e maior faturamento, e a soma dos faturamentos válidos
         for (FaturamentoDiario faturamento : faturamentos) {
             double valor = faturamento.getValor();
 
-            if (valor < menorFaturamento && valor > 0) {
-                menorFaturamento = valor;
-            }
-
-            if (valor > maiorFaturamento) {
-                maiorFaturamento = valor;
-            }
-
             if (valor > 0) {
+                if (valor < menorFaturamento) {
+                    menorFaturamento = valor;
+                }
+
+                if (valor > maiorFaturamento) {
+                    maiorFaturamento = valor;
+                }
+
                 somaFaturamento += valor;
                 diasComFaturamento++;
             }
         }
 
+        // Calcula a média mensal
         double mediaMensal = diasComFaturamento > 0 ? somaFaturamento / diasComFaturamento : 0;
 
+        // Conta os dias com faturamento acima da média
         for (FaturamentoDiario faturamento : faturamentos) {
             double valor = faturamento.getValor();
 
@@ -53,8 +55,9 @@ public class Faturamento {
             }
         }
 
-        System.out.println("Menor valor de faturamento: " + menorFaturamento);
-        System.out.println("Maior valor de faturamento: " + maiorFaturamento);
+        // Exibe os resultados
+        System.out.println("Menor valor de faturamento: " + (menorFaturamento == Double.MAX_VALUE ? "Não disponível" : menorFaturamento));
+        System.out.println("Maior valor de faturamento: " + (maiorFaturamento == Double.MIN_VALUE ? "Não disponível" : maiorFaturamento));
         System.out.println("Número de dias com faturamento acima da média: " + diasAcimaDaMedia);
     }
 
@@ -64,7 +67,7 @@ public class Faturamento {
             File file = new File(arquivoJson);
 
             if (!file.exists()) {
-//                System.out.println("File not found at the path: " + file.getAbsolutePath());
+                System.out.println("Arquivo não encontrado: " + file.getAbsolutePath());
                 return faturamentos;
             }
 
@@ -72,11 +75,10 @@ public class Faturamento {
             StringBuilder jsonContent = readFromReader(reader);
 
             Gson gson = new Gson();
-            JsonObject jsonObject = gson.fromJson(jsonContent.toString(), JsonObject.class);
             Type tipoListaFaturamento = new TypeToken<List<FaturamentoDiario>>() {}.getType();
-            faturamentos = gson.fromJson(jsonObject.get("faturamentos"), tipoListaFaturamento);
+            faturamentos = gson.fromJson(jsonContent.toString(), tipoListaFaturamento);
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return faturamentos;
     }
