@@ -4,8 +4,8 @@ import atividades.ex03.controller.Faturamento;
 
 public class Main {
     public static void main(String[] args) {
-
-        String caminhoArquivoJson = "C:/Users/italo.santana/OneDrive - cnj.jus.br/Área de Trabalho/Language/Estagio-Sao-Paulo/tecnica/src/atividades/ex03/dados/dados.json";
+        // Altere o caminho para o Absoluto caso não funcione.
+        String caminhoArquivoJson = "atividades/ex03/dados/dados.json";
         Faturamento faturamento = new Faturamento();
         faturamento.processarFaturamento(caminhoArquivoJson);
     }
