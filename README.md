@@ -41,4 +41,3 @@ As demais atividades podem ser testadas individualmente. Navegue até a pasta `E
 - Certifique-se de que todas as dependências necessárias estão instaladas e que o projeto está corretamente configurado.
 - Se houver algum problema com a execução ou com o caminho dos arquivos, verifique a configuração do seu ambiente de desenvolvimento e os caminhos dos arquivos.
 
-Se precisar de mais informações ou tiver alguma dúvida, entre em contato com o responsável pelo projeto.
